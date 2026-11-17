@@ -1,0 +1,686 @@
++ set -Eeuo pipefail
++ APP='USB Bootable Creator v2.1'
++ [[ 0 -ne 0 ]]
++ REQUIRED=(lsblk zenity dd cmp sync blockdev stat findmnt umount wipefs numfmt getent)
++ for cmd in "${REQUIRED[@]}"
++ command -v lsblk
++ for cmd in "${REQUIRED[@]}"
++ command -v zenity
++ for cmd in "${REQUIRED[@]}"
++ command -v dd
++ for cmd in "${REQUIRED[@]}"
++ command -v cmp
++ for cmd in "${REQUIRED[@]}"
++ command -v sync
++ for cmd in "${REQUIRED[@]}"
++ command -v blockdev
++ for cmd in "${REQUIRED[@]}"
++ command -v stat
++ for cmd in "${REQUIRED[@]}"
++ command -v findmnt
++ for cmd in "${REQUIRED[@]}"
++ command -v umount
++ for cmd in "${REQUIRED[@]}"
++ command -v wipefs
++ for cmd in "${REQUIRED[@]}"
++ command -v numfmt
++ for cmd in "${REQUIRED[@]}"
++ command -v getent
++ [[ -z :0.0 ]]
++ CALLING_USER=kali2026
+++ getent passwd kali2026
+++ cut -d: -f6
++ USER_HOME=/home/kali2026
++ USER_HOME=/home/kali2026
++ START_DIR=/home/kali2026
++ [[ -d /home/kali2026/Downloads ]]
++ START_DIR=/home/kali2026/Downloads/
++ DEVICES=()
++ IFS=
++ read -r line
+++ lsblk -dnP -p -o NAME,SIZE,MODEL,TRAN,RM,TYPE
++ eval 'NAME="/dev/sda" SIZE="931.5G" MODEL="ST1000LM035-1RK172" TRAN="sata" RM="0" TYPE="disk"'
+++ NAME=/dev/sda
+++ SIZE=931.5G
+++ MODEL=ST1000LM035-1RK172
+++ TRAN=sata
+++ RM=0
+++ TYPE=disk
++ [[ disk == disk ]]
++ [[ sata == usb ]]
++ [[ 0 == 1 ]]
++ IFS=
++ read -r line
++ eval 'NAME="/dev/sdb" SIZE="14.8G" MODEL="USB DISK" TRAN="usb" RM="1" TYPE="disk"'
+++ NAME=/dev/sdb
+++ SIZE=14.8G
+++ MODEL='USB DISK'
+++ TRAN=usb
+++ RM=1
+++ TYPE=disk
++ [[ disk == disk ]]
++ [[ usb == usb ]]
++ DEVICES+=("$NAME" "$SIZE" "${MODEL:-Unknown}" "${TRAN:-Unknown}")
++ IFS=
++ read -r line
++ eval 'NAME="/dev/sr0" SIZE="1024M" MODEL="PLDS DVD+/-RW DU-8A5LH" TRAN="sata" RM="1" TYPE="rom"'
+++ NAME=/dev/sr0
+++ SIZE=1024M
+++ MODEL='PLDS DVD+/-RW DU-8A5LH'
+++ TRAN=sata
+++ RM=1
+++ TYPE=rom
++ [[ rom == disk ]]
++ continue
++ IFS=
++ read -r line
++ eval 'NAME="/dev/nvme0n1" SIZE="238.5G" MODEL="SAMSUNG MZVLB256HBHQ-000H1" TRAN="nvme" RM="0" TYPE="disk"'
+++ NAME=/dev/nvme0n1
+++ SIZE=238.5G
+++ MODEL='SAMSUNG MZVLB256HBHQ-000H1'
+++ TRAN=nvme
+++ RM=0
+++ TYPE=disk
++ [[ disk == disk ]]
++ [[ nvme == usb ]]
++ [[ 0 == 1 ]]
++ IFS=
++ read -r line
++ [[ 4 -eq 0 ]]
+++ zenity --list '--title=USB Bootable Creator v2.1 - Select USB' '--text=Select the USB device:' --width=850 --height=400 --column=Device --column=Size --column=Model --column=Transport --print-column=1 /dev/sdb 14.8G 'USB DISK' usb
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:3977:3-22: No property named "-gtk-outline-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4094:3-29: No property named "-GtkWidget-window-dragging"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4108:9-37: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4110:9-38: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4113:9-40: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4115:9-41: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4118:5-33: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4120:5-34: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4123:5-36: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4125:5-37: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4131:7-36: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4133:7-39: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4136:7-35: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4138:7-38: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4212:23-37: Not a valid image
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4251:3-31: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4253:3-32: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4260:3-34: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.420: Theme parser error: gtk.css:4262:3-35: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.421: Theme parser error: gtk.css:4930:12-17: "shade" is not a valid color name.
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.422: Theme parser error: gtk.css:4990:12-17: "shade" is not a valid color name.
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.422: Theme parser error: gtk.css:5017:12-15: "mix" is not a valid color name.
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.422: Theme parser error: gtk.css:5021:12-15: "mix" is not a valid color name.
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.422: Theme parser warning: gtk.css:5222:3-5223:1: Expected ';' at end of block
+
+(zenity:198614): Gtk-WARNING **: 09:09:50.422: Theme parser error: gtk.css:5253:3-19: No property named "-gtk-icon-effect"
++ USB=/dev/sdb
++ [[ -b /dev/sdb ]]
+++ lsblk -o NAME,SIZE,TYPE,FSTYPE,LABEL,MOUNTPOINTS /dev/sdb
++ USB_INFO=$'NAME    SIZE TYPE FSTYPE  LABEL             MOUNTPOINTS\nsdb    14.8G disk iso9660 Bodhi Linux 5.1.0 \n├─sdb1  747M part iso9660 Bodhi Linux 5.1.0 \n└─sdb2  2.3M part vfat                      '
++ zenity --info '--title=USB Bootable Creator v2.1 - USB Inspection' --width=750 $'--text=USB selected:\\n/dev/sdb\\n\\nPartitions information:\\n\\nNAME    SIZE TYPE FSTYPE  LABEL             MOUNTPOINTS\nsdb    14.8G disk iso9660 Bodhi Linux 5.1.0 \n├─sdb1  747M part iso9660 Bodhi Linux 5.1.0 \n└─sdb2  2.3M part vfat                      \\n\\nClick OK to select your ISO image.'
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.505: Theme parser error: gtk.css:3977:3-22: No property named "-gtk-outline-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4094:3-29: No property named "-GtkWidget-window-dragging"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4108:9-37: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4110:9-38: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4113:9-40: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4115:9-41: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4118:5-33: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4120:5-34: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4123:5-36: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4125:5-37: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4131:7-36: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4133:7-39: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4136:7-35: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.506: Theme parser error: gtk.css:4138:7-38: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.507: Theme parser error: gtk.css:4212:23-37: Not a valid image
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.507: Theme parser error: gtk.css:4251:3-31: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.507: Theme parser error: gtk.css:4253:3-32: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.507: Theme parser error: gtk.css:4260:3-34: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.507: Theme parser error: gtk.css:4262:3-35: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.508: Theme parser error: gtk.css:4930:12-17: "shade" is not a valid color name.
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.508: Theme parser error: gtk.css:4990:12-17: "shade" is not a valid color name.
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.508: Theme parser error: gtk.css:5017:12-15: "mix" is not a valid color name.
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.508: Theme parser error: gtk.css:5021:12-15: "mix" is not a valid color name.
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.509: Theme parser warning: gtk.css:5222:3-5223:1: Expected ';' at end of block
+
+(zenity:198692): Gtk-WARNING **: 09:09:53.509: Theme parser error: gtk.css:5253:3-19: No property named "-gtk-icon-effect"
+++ zenity --file-selection '--title=USB Bootable Creator v2.1 - Browse ISO Image' --filename=/home/kali2026/Downloads/ '--file-filter=ISO images | *.iso *.ISO' '--file-filter=All files | *'
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:3977:3-22: No property named "-gtk-outline-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4094:3-29: No property named "-GtkWidget-window-dragging"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4108:9-37: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4110:9-38: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4113:9-40: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4115:9-41: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4118:5-33: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4120:5-34: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4123:5-36: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4125:5-37: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4131:7-36: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4133:7-39: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4136:7-35: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4138:7-38: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4212:23-37: Not a valid image
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4251:3-31: No property named "-gtk-outline-top-left-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4253:3-32: No property named "-gtk-outline-top-right-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4260:3-34: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.651: Theme parser error: gtk.css:4262:3-35: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.652: Theme parser error: gtk.css:4930:12-17: "shade" is not a valid color name.
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.652: Theme parser error: gtk.css:4990:12-17: "shade" is not a valid color name.
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.652: Theme parser error: gtk.css:5017:12-15: "mix" is not a valid color name.
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.652: Theme parser error: gtk.css:5021:12-15: "mix" is not a valid color name.
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.653: Theme parser warning: gtk.css:5222:3-5223:1: Expected ';' at end of block
+
+(zenity:198715): Gtk-WARNING **: 09:09:54.653: Theme parser error: gtk.css:5253:3-19: No property named "-gtk-icon-effect"
++ ISO=/home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso
++ echo 'DEBUG: Selected ISO = [/home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso]'
+DEBUG: Selected ISO = [/home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso]
++ [[ ! -f /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso ]]
++ [[ ! -r /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso ]]
++ [[ /home/kali2026/downloads/lubuntu-18.04.5-desktop-i386.iso != *.iso ]]
+++ stat -c%s /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso
++ ISO_SIZE=1193803776
++ ((  ISO_SIZE == 0  ))
+++ blockdev --getsize64 /dev/sdb
++ USB_SIZE=15938355200
++ ((  ISO_SIZE > USB_SIZE  ))
+++ numfmt --to=iec-i --suffix=B 1193803776
++ ISO_HUMAN=1.2GiB
+++ numfmt --to=iec-i --suffix=B 15938355200
++ USB_HUMAN=15GiB
+++ basename /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso
++ zenity --info '--title=USB Bootable Creator v2.1 - ISO Selected' --width=650 '--text=ISO successfully selected!\n\nFile: lubuntu-18.04.5-desktop-i386.iso\nPath: /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso\nISO size: 1.2GiB\n\nUSB: /dev/sdb\nUSB capacity: 15GiB\n\nClick OK to continue.'
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:3977:3-22: No property named "-gtk-outline-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4094:3-29: No property named "-GtkWidget-window-dragging"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4108:9-37: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4110:9-38: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4113:9-40: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4115:9-41: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4118:5-33: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4120:5-34: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4123:5-36: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4125:5-37: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4131:7-36: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4133:7-39: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4136:7-35: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4138:7-38: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4212:23-37: Not a valid image
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4251:3-31: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4253:3-32: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4260:3-34: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.134: Theme parser error: gtk.css:4262:3-35: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.135: Theme parser error: gtk.css:4930:12-17: "shade" is not a valid color name.
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.136: Theme parser error: gtk.css:4990:12-17: "shade" is not a valid color name.
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.136: Theme parser error: gtk.css:5017:12-15: "mix" is not a valid color name.
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.136: Theme parser error: gtk.css:5021:12-15: "mix" is not a valid color name.
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.136: Theme parser warning: gtk.css:5222:3-5223:1: Expected ';' at end of block
+
+(zenity:199057): Gtk-WARNING **: 09:09:59.136: Theme parser error: gtk.css:5253:3-19: No property named "-gtk-icon-effect"
++ IFS=
++ read -r mountpoint
+++ lsblk -nrpo MOUNTPOINT /dev/sdb
+++ sed '/^$/d'
+++ findmnt -nro SOURCE -T /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso
+++ head -n 1
++ ISO_SOURCE=/dev/nvme0n1p2
++ [[ -n /dev/nvme0n1p2 ]]
++ [[ -b /dev/nvme0n1p2 ]]
++ lsblk -s -nrpo NAME /dev/nvme0n1p2
++ grep -Fxq /dev/sdb
+++ basename /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso
++ zenity --question '--title=USB Bootable Creator v2.1 - FINAL CONFIRMATION' --width=600 '--text=READY TO CREATE BOOTABLE USB\n\nUSB DEVICE:\n/dev/sdb\n\nISO IMAGE:\nlubuntu-18.04.5-desktop-i386.iso\n\nISO SIZE: 1.2GiB\n\nWARNING:\nALL DATA ON THIS USB WILL BE PERMANENTLY ERASED!\n\nDo you want to continue?'
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:3977:3-22: No property named "-gtk-outline-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4094:3-29: No property named "-GtkWidget-window-dragging"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4108:9-37: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4110:9-38: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4113:9-40: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4115:9-41: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4118:5-33: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4120:5-34: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4123:5-36: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4125:5-37: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4131:7-36: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4133:7-39: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4136:7-35: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.982: Theme parser error: gtk.css:4138:7-38: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.983: Theme parser error: gtk.css:4212:23-37: Not a valid image
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.983: Theme parser error: gtk.css:4251:3-31: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.983: Theme parser error: gtk.css:4253:3-32: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.983: Theme parser error: gtk.css:4260:3-34: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.983: Theme parser error: gtk.css:4262:3-35: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.984: Theme parser error: gtk.css:4930:12-17: "shade" is not a valid color name.
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.984: Theme parser error: gtk.css:4990:12-17: "shade" is not a valid color name.
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.984: Theme parser error: gtk.css:5017:12-15: "mix" is not a valid color name.
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.984: Theme parser error: gtk.css:5021:12-15: "mix" is not a valid color name.
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.984: Theme parser warning: gtk.css:5222:3-5223:1: Expected ';' at end of block
+
+(zenity:199089): Gtk-WARNING **: 09:10:00.984: Theme parser error: gtk.css:5253:3-19: No property named "-gtk-icon-effect"
++ IFS=
++ read -r partition
+++ lsblk -lnpo NAME,TYPE /dev/sdb
+++ awk '$2=="part" {print $1}'
++ [[ -n /dev/sdb1 ]]
++ IFS=
++ read -r target
+++ findmnt -rn -S /dev/sdb1 -o TARGET
++ IFS=
++ read -r partition
++ [[ -n /dev/sdb2 ]]
++ IFS=
++ read -r target
+++ findmnt -rn -S /dev/sdb2 -o TARGET
++ IFS=
++ read -r partition
++ wipefs -af /dev/sdb
+/dev/sdb: 5 bytes were erased at offset 0x00008001 (iso9660): 43 44 30 30 31
+/dev/sdb: 2 bytes were erased at offset 0x000001fe (dos): 55 aa
+/dev/sdb: 8 bytes were erased at offset 0x00000200 (gpt): 45 46 49 20 50 41 52 54
+/dev/sdb: 2 bytes were erased at offset 0x00000000 (mac): 45 52
++ zenity --info '--title=USB Bootable Creator v2.1 - Flashing' '--text=Starting USB flash operation...\n\nUSB: /dev/sdb\n\nDo not disconnect your USB.\n\nProgress will be displayed in the terminal.'
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:3977:3-22: No property named "-gtk-outline-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4094:3-29: No property named "-GtkWidget-window-dragging"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4108:9-37: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4110:9-38: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4113:9-40: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4115:9-41: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4118:5-33: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4120:5-34: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4123:5-36: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4125:5-37: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4131:7-36: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4133:7-39: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.911: Theme parser error: gtk.css:4136:7-35: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.912: Theme parser error: gtk.css:4138:7-38: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.912: Theme parser error: gtk.css:4212:23-37: Not a valid image
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.912: Theme parser error: gtk.css:4251:3-31: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.912: Theme parser error: gtk.css:4253:3-32: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.912: Theme parser error: gtk.css:4260:3-34: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.912: Theme parser error: gtk.css:4262:3-35: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.913: Theme parser error: gtk.css:4930:12-17: "shade" is not a valid color name.
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.913: Theme parser error: gtk.css:4990:12-17: "shade" is not a valid color name.
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.913: Theme parser error: gtk.css:5017:12-15: "mix" is not a valid color name.
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.913: Theme parser error: gtk.css:5021:12-15: "mix" is not a valid color name.
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.913: Theme parser warning: gtk.css:5222:3-5223:1: Expected ';' at end of block
+
+(zenity:199125): Gtk-WARNING **: 09:10:02.913: Theme parser error: gtk.css:5253:3-19: No property named "-gtk-icon-effect"
++ echo 'DEBUG: USB target = [/dev/sdb]'
+DEBUG: USB target = [/dev/sdb]
++ echo 'DEBUG: ISO source = [/home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso]'
+DEBUG: ISO source = [/home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso]
++ [[ -z /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso ]]
++ [[ ! -f /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso ]]
++ dd if=/home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso of=/dev/sdb bs=4M status=progress conv=fsync
+284+1 records in
+284+1 records out
+1193803776 bytes (1.2 GB, 1.1 GiB) copied, 82.3175 s, 14.5 MB/s
++ sync
++ zenity --info '--title=USB Bootable Creator v2.1 - Verification' '--text=Flash operation completed.\n\nVerifying written data...\n\nPlease wait.'
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:3977:3-22: No property named "-gtk-outline-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4094:3-29: No property named "-GtkWidget-window-dragging"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4108:9-37: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4110:9-38: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4113:9-40: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4115:9-41: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4118:5-33: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4120:5-34: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4123:5-36: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4125:5-37: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4131:7-36: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4133:7-39: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4136:7-35: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4138:7-38: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.987: Theme parser error: gtk.css:4212:23-37: Not a valid image
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.988: Theme parser error: gtk.css:4251:3-31: No property named "-gtk-outline-top-left-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.988: Theme parser error: gtk.css:4253:3-32: No property named "-gtk-outline-top-right-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.988: Theme parser error: gtk.css:4260:3-34: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.988: Theme parser error: gtk.css:4262:3-35: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.989: Theme parser error: gtk.css:4930:12-17: "shade" is not a valid color name.
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.989: Theme parser error: gtk.css:4990:12-17: "shade" is not a valid color name.
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.989: Theme parser error: gtk.css:5017:12-15: "mix" is not a valid color name.
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.989: Theme parser error: gtk.css:5021:12-15: "mix" is not a valid color name.
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.989: Theme parser warning: gtk.css:5222:3-5223:1: Expected ';' at end of block
+
+(zenity:199869): Gtk-WARNING **: 09:11:26.989: Theme parser error: gtk.css:5253:3-19: No property named "-gtk-icon-effect"
+
+(zenity:199869): Gtk-WARNING **: 09:11:27.137: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:27.138: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:27.152: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:27.155: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:27.156: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:27.157: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:27.287: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:27.288: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:30.213: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:30.214: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:30.215: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:30.216: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:31.650: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:31.650: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:31.868: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:31.869: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:31.938: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:31.939: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.021: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.021: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.085: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.086: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.152: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.152: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.270: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.270: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.286: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.287: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.303: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.303: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.320: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.320: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.337: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.337: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.354: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.354: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.371: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.371: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.387: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.388: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.404: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.405: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.421: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.422: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.438: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.438: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.455: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.455: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.471: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.472: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.559: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.560: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.576: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.576: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.592: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.593: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.609: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.610: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.626: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
+
+(zenity:199869): Gtk-WARNING **: 09:11:32.627: Trying to measure AdwMessageDialog 0x55567d851060 for height of 279, but it needs at least 282
++ cmp -n 1193803776 /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso /dev/sdb
++ sync
+++ basename /home/kali2026/Downloads/lubuntu-18.04.5-desktop-i386.iso
++ zenity --info '--title=USB Bootable Creator v2.1 - SUCCESS' --width=600 '--text=SUCCESS!\n\nYour USB has been successfully created and verified.\n\nUSB: /dev/sdb\nISO: lubuntu-18.04.5-desktop-i386.iso\n\nVerification: PASSED\n\nYour USB is ready to boot!\n\nYou can now safely disconnect it.'
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:3977:3-22: No property named "-gtk-outline-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4094:3-29: No property named "-GtkWidget-window-dragging"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4108:9-37: No property named "-gtk-outline-top-left-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4110:9-38: No property named "-gtk-outline-top-right-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4113:9-40: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4115:9-41: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4118:5-33: No property named "-gtk-outline-top-left-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4120:5-34: No property named "-gtk-outline-top-right-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4123:5-36: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4125:5-37: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4131:7-36: No property named "-gtk-outline-top-right-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4133:7-39: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4136:7-35: No property named "-gtk-outline-top-left-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4138:7-38: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4212:23-37: Not a valid image
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4251:3-31: No property named "-gtk-outline-top-left-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4253:3-32: No property named "-gtk-outline-top-right-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.372: Theme parser error: gtk.css:4260:3-34: No property named "-gtk-outline-bottom-left-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.373: Theme parser error: gtk.css:4262:3-35: No property named "-gtk-outline-bottom-right-radius"
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.374: Theme parser error: gtk.css:4930:12-17: "shade" is not a valid color name.
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.374: Theme parser error: gtk.css:4990:12-17: "shade" is not a valid color name.
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.374: Theme parser error: gtk.css:5017:12-15: "mix" is not a valid color name.
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.374: Theme parser error: gtk.css:5021:12-15: "mix" is not a valid color name.
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.375: Theme parser warning: gtk.css:5222:3-5223:1: Expected ';' at end of block
+
+(zenity:200483): Gtk-WARNING **: 09:12:26.375: Theme parser error: gtk.css:5253:3-19: No property named "-gtk-icon-effect"
++ exit 0
